@@ -15,22 +15,28 @@ head.textContent="THE BOSS";
 head.style.border="solid 5px black";
                        
 //getElementByClass                                                                          
-const items = document.getElementsByClassName("list-group-item");
+//const items = document.getElementsByClassName("list-group-item");
 //console.log(items);                        
 //items[0].innerHTML="<h1>I Am The Boss</h1>"
 //items[0].style.border="dashed 5px blue"
 //items[0].style.fontStyle="italic"
-items[2].style.background="green"
+//items[2].style.background="green"
+const items = document.getElementsByTagName("li");
 for(var i = 0  ; i < items.length ; i++ ){
 
     items[i].style.fontWeight="bold";
     items[i].style.color="red";
     items[i].textContent= "I Am item " + i
-}                                              
-const title = document.getElementsByClassName("title")
+}
+
+
+
+
+
+//const title = document.getElementsByClassName("title")
 //console.log(title)                                                        
-title[0].style.fontWeight='bold'
-title[0].style.color="green"  
+//title[0].style.fontWeight='bold'
+//title[0].style.color="green"  
 
   
 
