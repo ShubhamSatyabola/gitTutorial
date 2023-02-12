@@ -1,20 +1,29 @@
-//const form = document.getElementById(addform);
+var form = document.getElementById('addform');
+var array = []
 
-
-//form.addEventListener('submit', setlocalStorage)
+form.addEventListener('submit', setlocalStorage)
 //localstorage.setitem
-//function setlocalStorage(e){
-  //  e.preventDefault();
-    var name = document.getElementById(name).value;
-    var email = document.getElementById(email).value;
-    var phone = document.getElementById(phone).value;
+function setlocalStorage(e){
+    e.preventDefault();
     
-    localStorage.setItem('username', name);
+    var Name = e.target.visitor_name.value;
+    var email = e.target.visitor_email.value;
+    var phone = e.target.visitor_phone.value;
+    var data = {"name":Name , "email":email , "phone":phone };
     
-    localStorage.setItem('Email', email);
+    array.push(data)
+
+    data_serialized = JSON.stringify(array);
     
-    localStorage.setItem('Phone', phone);
-//}
+    
+    //for (var item=0 ; item < array.length ; i++)
+    localStorage.setItem('data', data_serialized);
+    //localStorage.setItem('username', Name);
+    
+    //localStorage.setItem('Email', email);
+    
+    //localStorage.setItem('Phone', phone);
+}
 
 
 
