@@ -1,5 +1,5 @@
 var form = document.getElementById('addform');
-var array = []
+var ul = document.getElementById('list-group');
 
 form.addEventListener('submit', setlocalStorage)
 //localstorage.setitem
@@ -9,21 +9,16 @@ function setlocalStorage(e){
     var Name = e.target.visitor_name.value;
     var email = e.target.visitor_email.value;
     var phone = e.target.visitor_phone.value;
-    var data = {"name":Name , "email":email , "phone":phone };
-    
-    array.push(data)
+    var data = {Name , email , phone};
+    localStorage.setItem(email, JSON.stringify(data));
+    showOnScreen(data);
+      }
+function showOnScreen(data){
+    var li = document.createElement('li')
+    li.className = 'list-group-item'
+    li.textContent = `${data.Name}  ${data.email}  ${data.phone}`
+    ul.appendChild(li)
 
-    data_serialized = JSON.stringify(array);
-    
-    
-    //for (var item=0 ; item < array.length ; i++)
-    localStorage.setItem('data', data_serialized);
-    //localStorage.setItem('username', Name);
-    
-    //localStorage.setItem('Email', email);
-    
-    //localStorage.setItem('Phone', phone);
 }
-
 
 
