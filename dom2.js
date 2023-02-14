@@ -28,8 +28,22 @@ function showOnScreen(data){
 
         ul.removeChild(li)
     }
-    li.appendChild(btn)
+    const edit = document.createElement('button')
+    edit.className = 'btn btn-dark float-right edit'
+    edit.appendChild(document.createTextNode('Edit'))
+    
+    edit.onclick = () => {
+        localStorage.removeItem(data.email)
+        ul.removeChild(li)
+        document.getElementById('yourname').value=data.Name;
+        document.getElementById('email').value=data.email;
+        document.getElementById('phone').value=data.phone;
+        
 
+    }
+
+    li.appendChild(btn)
+    li.appendChild(edit)
     ul.appendChild(li)
 
 }
