@@ -5,8 +5,8 @@ form.addEventListener('submit', setlocalStorage)
 window.addEventListener('DOMContentLoaded', ()=>{
     axios.get('https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo')
 .then((res)=>{for(i in res.data){
-    let x = res.data[i]
-    showOnScreen(x)
+    
+    showOnScreen(res.data[i])
 
 }})
 })
@@ -38,7 +38,8 @@ function showOnScreen(data){
     btn.appendChild(document.createTextNode('Delete'))
     
     btn.onclick = () => {
-        localStorage.removeItem(data.email)
+        axios.delete(`https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo/${data._id}`)
+        //localStorage.removeItem(data.email)
 
         ul.removeChild(li)
     }
