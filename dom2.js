@@ -39,21 +39,24 @@ function showOnScreen(data){
     
     btn.onclick = () => {
         axios.delete(`https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo/${data._id}`)
+        .then(ul.removeChild(li))
         //localStorage.removeItem(data.email)
 
-        ul.removeChild(li)
+        
     }
     const edit = document.createElement('button')
     edit.className = 'btn btn-dark float-right edit'
     edit.appendChild(document.createTextNode('Edit'))
     
     edit.onclick = () => {
-        localStorage.removeItem(data.email)
-        ul.removeChild(li)
+        
+        // localStorage.removeItem(data.email)
+        //ul.removeChild(li)
         document.getElementById('yourname').value=data.Name;
         document.getElementById('email').value=data.email;
         document.getElementById('phone').value=data.phone;
-        
+        axios.delete(`https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo/${data._id}`)
+        .then(ul.removeChild(li))
 
     }
 
