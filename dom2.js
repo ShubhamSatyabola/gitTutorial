@@ -3,6 +3,13 @@ var ul = document.getElementById('list-group');
 
 form.addEventListener('submit', setlocalStorage)
 
+axios.get('https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo')
+.then((res)=>{for(i in res.data){
+    let x = res.data[i]
+    showOnScreen(x)
+
+}})
+
 //localstorage.setitem
 function setlocalStorage(e){
     e.preventDefault();
@@ -11,8 +18,13 @@ function setlocalStorage(e){
     var email = e.target.visitor_email.value;
     var phone = e.target.visitor_phone.value;
     var data = {Name , email , phone};
-    localStorage.setItem(email, JSON.stringify(data));
-    showOnScreen(data);
+    axios.post('https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo', data)
+    .then((res)=> showOnScreen(res.data))
+    .catch((err)=>console.log(err))
+
+    
+    //localStorage.setItem(email, JSON.stringify(data));
+    
       }
 function showOnScreen(data){
     var li = document.createElement('li')
