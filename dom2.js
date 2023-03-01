@@ -2,13 +2,15 @@ var form = document.getElementById('addform');
 var ul = document.getElementById('list-group');
 
 form.addEventListener('submit', setlocalStorage)
-
-axios.get('https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo')
+window.addEventListener('DOMContentLoaded', ()=>{
+    axios.get('https://crudcrud.com/api/74c468408b454e348d13bb19d875edac/basicInfo')
 .then((res)=>{for(i in res.data){
     let x = res.data[i]
     showOnScreen(x)
 
 }})
+})
+
 
 //localstorage.setitem
 function setlocalStorage(e){
