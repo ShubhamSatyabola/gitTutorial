@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>food Order App</title>
+</head>
+<body>
+    <header>
+        <h1 class=" text-center">Foodie</h1>
+        <p class="text-center">Order your Meal Here</p>
+        <hr>
+    </header>
+    <form id="addform">
+        <div class="form-group">
+          <label for="name">Dish Name</label>
+          <input type="text" id="name" class="form-control" name="Dish_name"  pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="form-group">
+          <label for="cost">Dish Cost</label>
+          <input type="text" id="cost" class="form-control" name="Dish_cost"  required>
+        </div>
+        <div>
+            <label for="Category" class="form-label">Table_Number</label>
+        <select id="Category" class="form-select">
+            <option value="Table1">Table1</option>
+            <option value="Table2">Table2</option>
+            <option value="Table3">Table3</option>
+            <option value="Table4">Table4</option>
+            <option value="Table5">Table5</option>
+        </select>
+        </div>
+        <hr>
+        
+        <button type="submit" class="btn btn-block btn-dark" value="submit">Place Your Order</button>
+        
+      </form>
+      <ul id="list-group">
+    
+      </ul>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="E:\webDev\gitTutorial\restrauntOrderApp\restauntApp.js"></script>
+</body>
+</html>
